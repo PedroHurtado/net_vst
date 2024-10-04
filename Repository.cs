@@ -8,30 +8,31 @@
 */
 namespace Repository
 {
-    public interface IGet
+    public interface IGet<T>
     {
         void Get();
     }
-    public interface IAdd
+    public interface IAdd<T>
     {
         void Add();
     }
 
-    public interface IUpdate : IGet
+    public interface IUpdate<T> : IGet<T>
     {
         void Update();
     }
-    public interface IRemove : IGet
+    public interface IRemove<T> : IGet<T>
     {
         void Remove();
     }
 
-    public interface IRepository : IAdd, IUpdate, IRemove
+    public interface IRepository<T> : IAdd<T>, IUpdate<T>, IRemove<T>
     {
 
     }
 
-    public class CustomerRepository : IRepository
+    public class Customer{}
+    public class CustomerRepository : IRepository<Customer>
     {
         public void Add()
         {
@@ -53,7 +54,10 @@ namespace Repository
             throw new NotImplementedException();
         }
     }
-    public class UserRepository : IGet
+    public class User{
+
+    }
+    public class UserRepository : IGet<User>
     {
         public void Get()
         {
@@ -62,10 +66,10 @@ namespace Repository
     }
 
     public class ServiceCustomer{
-        public void Get(IGet respository){
+        public void Get(IGet<Customer> respository){
             
         }
-        public void Update(IUpdate repository){
+        public void Update(IUpdate<Customer> repository){
             repository.Get();
             repository.Update();
         }
