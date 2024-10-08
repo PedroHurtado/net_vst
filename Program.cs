@@ -3,6 +3,14 @@
 using Aves;
 using Paint;
 
+using clean.features.pizza;
+
+
+
+Controller.IController controller = Controller.Create();
+//controller.handle()
+
+
 var dto = new DtoShape(new Point(0,0), new Point(0,0), "black");
 App.Add("circle", dto);
     

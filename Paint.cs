@@ -123,7 +123,7 @@ namespace Paint
         
         
         
-        public static void Add(string shapeName,DtoShape dto){
+        public static void Add(string shapeName,DtoShape dto){            
             var shape = toolBar.GetShape(shapeName,dto);
             if(shape!=null){
                 var add = new AddCommand(canvas, shape);
