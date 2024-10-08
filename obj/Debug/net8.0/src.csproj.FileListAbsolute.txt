@@ -12,3 +12,4 @@ C:\Users\Home\Documents\Cursos 2024\Octubre\.Net core\src\obj\Debug\net8.0\refin
 C:\Users\Home\Documents\Cursos 2024\Octubre\.Net core\src\obj\Debug\net8.0\src.pdb
 C:\Users\Home\Documents\Cursos 2024\Octubre\.Net core\src\obj\Debug\net8.0\src.genruntimeconfig.cache
 C:\Users\Home\Documents\Cursos 2024\Octubre\.Net core\src\obj\Debug\net8.0\ref\src.dll
+c:\Users\Home\Documents\Cursos 2024\Octubre\.Net core\src\obj\Debug\net8.0\src.sourcelink.json
