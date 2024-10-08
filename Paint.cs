@@ -86,9 +86,27 @@ namespace Paint
         }
     }
 
-
+    public abstract class CommandBase {
+        public abstract void Execute();
+    }
+    public class AddCommand  : CommandBase{
+        private ICanvas _receiver;
+        private Shape _shape;
+        public AddCommand(ICanvas receiver, Shape shape){
+            _receiver =receiver;
+            _shape =shape;
+        }
+        public override void Execute()       
+        {
+            _receiver.add(_shape);
+        }
+    }
     public static class App{
-        public static IToolBar createToolBar(){
+
+        
+        private static IToolBar toolBar = createToolBar();
+        private static ICanvas canvas = createCanvas();
+        private static IToolBar createToolBar(){
             var toolbar = new ToolBar();
             
             toolbar.RegisterColors("black", new Color(0,0,0));
@@ -99,8 +117,18 @@ namespace Paint
             return toolbar;
 
         }
-        public static ICanvas createCanvas(){
+        private static ICanvas createCanvas(){
             return new Canvas();
+        }
+        
+        
+        
+        public static void Add(string shapeName,DtoShape dto){
+            var shape = toolBar.GetShape(shapeName,dto);
+            if(shape!=null){
+                var add = new AddCommand(canvas, shape);
+                add.Execute();
+            }            
         }
     }
 

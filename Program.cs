@@ -3,13 +3,8 @@
 using Aves;
 using Paint;
 
-var canvas = App.createCanvas();
-var toolbar =App.createToolBar();
 var dto = new DtoShape(new Point(0,0), new Point(0,0), "black");
-var shape = toolbar.GetShape("circle", dto);
-if(shape != null){
-    canvas.add(shape);
-}
+App.Add("circle", dto);
     
 
 var pinguino = new Pinguino(5);
