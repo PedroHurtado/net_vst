@@ -4,11 +4,21 @@ using Aves;
 using Paint;
 
 using clean.features.pizza;
+using clean.domain.pizza;
 
 
 
 Controller.IController controller = Controller.Create();
-//controller.handle()
+var ingredients =new List<Ingredient>();{
+    Ingredient.Create("Tomate", 1);
+    Ingredient.Create("Queso", 2);
+}
+controller.handle(new Controller.Request(
+    "Carbonara",
+    "Nueva Pizza",
+    "img",
+    ingredients
+));
 
 
 var dto = new DtoShape(new Point(0,0), new Point(0,0), "black");
