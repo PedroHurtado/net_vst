@@ -1,0 +1,26 @@
+1. JWT(Token)
+    const parts = jwt.split('.')
+    const data = atob(parts[1])
+
+    ¿Donde lo estais guardando?
+    localStorage
+        1. Codigo sincrono
+        2. Serializacion
+        3. No puede trabajar con worker
+    IndexDb
+        1. Acceso asincrono
+        2. No existe serializacion
+        3. Desde el hilo principal y desde los worker
+    ¿Como me protejo para que no me roben el jwt?
+        https://www.w3.org/TR/CSP3/
+    Refresh Token
+            3600 1hora
+    si esta caducado /refresh/
+2. Cookies
+    httpOnly->no es accesible por document.cookie
+    secure->solo se va a enviar por el protocolo https
+    Angular,React,Vue->GateWay
+    Servers,Mobile->GateWay->token
+
+Cookie->httpOnly,secure
+JWT->IndexDb+CSP(Content security policy) solo web

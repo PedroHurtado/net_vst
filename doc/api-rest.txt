@@ -1,0 +1,121 @@
+pizza:{
+    id,
+    name,
+    description,
+    url,
+    price->get
+    ingredients:[{id,name,price}]
+}
+
+server:http://localhost:8080/{path}
+1. patch->pizzas(plurarilizar los resources)
+2. http://localhost:8080/{path}/add(incrorrecto)
+    No se debería de exponer acciones en la ruta
+    http://localhost:8080/{path}
+    POST,PUT,DELETE,PATCH,GET
+3. http://localhost:8080/{path}.json | .xml
+    No se deben solicitar formatos en la url
+    accept:application/json(GET)        
+    content-type:application/json
+        request
+        response
+4. Versionado
+    url/v1/pizzas
+    headers->version
+    Nunca deberiamos de crear la version v0
+    url/pizzas
+
+Acciones
+
+1. Create
+path:/pizzas
+verbo:POST
+headers:{
+    "content-type":"application/json"->request body
+    "accept":"application/xml"->response body xml
+}
+body:{}->datos necesarios para crear la entidad
+
+--response--
+status-code(OK)
+201(body)
+{entidad completa}
+204(no content)
+status-code(ERROR)
+400,401,403,405,409,415,500
+Throw
+¿Deberián de devolver los status code incorrectos body?
+400->{
+    name:[]
+}
+500->{
+    timeout->reintentar
+    error->redirect
+}
+403->404
+
+2. update
+path:/pizzas/{id}
+verbo:PUT|PATCH
+headers:{
+    "content-type":"application/json"->request body
+    "accept":"application/xml"->response body xml
+}
+body:{}->datos necesarios para crear la entidad
+
+--response--
+status-code(OK)
+200(body) ->nuevo estado
+204(no content)->mismo estado
+status-code(ERROR)
+400,401,403,405,409,415,500,404
+3. delete
+
+path:/pizzas/{id}
+verbo:DELETE
+headers:{
+    "content-type":"application/json"->request body
+    "accept":"application/xml"->response body xml
+}
+body:{}->datos necesarios para crear la entidad
+
+--response--
+status-code(OK)
+204(body)
+status-code(ERROR)
+400,401,403,405,409,415,500,404
+
+
+path:/pizzas/{id}
+verbo:GET
+headers:{
+    "accept":"application/xml"->response body xml
+}
+--response--
+status-code(OK)
+200(body)
+status-code(ERROR)
+400,401,403,405,409,415,500,404
+
+path:/pizzas
+verbo:GET
+headers:{
+    "accept":"application/xml"->response body xml
+}
+--response--
+status-code(OK)
+200(body), []
+status-code(ERROR)
+400,401,403,405,409,415,500
+
+/pizzas?name=car&page=1&size=25(where)
+
+pagina->id,name
+pagina->id,name,price
+
+https://www.odata.org/(.net)
+https://olingo.apache.org/(Java)
+https://graphql.org/(GET,POST)
+
+
+

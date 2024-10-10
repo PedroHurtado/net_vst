@@ -1,0 +1,9 @@
+crear una api-rest
+
+1. dotnet new webapi
+2. implementar un metodo post
+    enviar un request->desde el body
+    guardamos en memoria
+3. vamos a implementar un metodo get
+    que nos devuelva los datos por id
+    en el caso de no existir->404

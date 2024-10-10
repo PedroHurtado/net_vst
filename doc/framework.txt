@@ -1,0 +1,2 @@
+1. como le digo a un enpoint su patch y el verbo
+2. Parametros, queryString, Body, CustomHeaders

@@ -1,0 +1,29 @@
+1. existe cors en la web
+    "Fetch/Xhr"
+    Fetch->Fetch
+        https://developer.mozilla.org/es/docs/Web/API/Fetch_API
+    Xhr->XmlHttpRequest
+        https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+2. Peticion
+    origin:http://localhost/8080
+    server:http://localhost/8081
+
+1. Llegan las peticiones al servidor
+    Origin->8080
+    8081->Access-Control-Allow-Origin:url | *
+
+    Cuidado->CSRF 
+    devuelves una url y te autentica con cookie
+
+    Es devolver la misma url que nos ha llegado
+
+    Lista->url->permitidas para nuestra api
+
+    *->nunca me podré autenticar con cookie
+
+    https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request
+
+    GET,POST,PUT,PATCH,DELETE
+    OPTIONS
+    
+    2 peticions al servidor
