@@ -34,6 +34,8 @@ namespace clean.domain.pizza{
             foreach(var ingredient in ingredientes){
                 pizza.ingredients.Add(ingredient);
             }
+            pizza.AddEvent(new AddEventPizza(pizza.Id,pizza));
+
             return pizza;
         }
     }

@@ -1,6 +1,13 @@
 namespace clean.core{
     public abstract class EntityBase{
 
+        private readonly List<EventBase> events = [];
+
+        public void AddEvent(EventBase eventBase) { events.Add(eventBase);}
+        public void RemoveEvent(EventBase eventBase) { events.Remove(eventBase);}
+        public void Clear(){ events.Clear(); }
+
+        public List<EventBase> Events { get { return [.. events]; }}
 
         /*
         constructor sin parametros por culpa de entity framework*/

@@ -22,3 +22,4 @@ n:m
 
 CQRS
 OUTBUX PATTERN
+https://github.com/andonisan/dotnet-2022/tree/main/src/vertical-slice/src/TodoApp.App/IntegrationEventsModule
