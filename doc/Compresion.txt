@@ -1,0 +1,30 @@
+3. Compresión de Respuestas
+o Configuración y uso de compresión de respuestas
+o Uso de middleware de compresión
+
+Minimizar mi trafico de red
+
+Explorador->accept-encoding
+Movil->no accept-encoding no debería de hacer compresion
+Server->accept-encoding
+
+si no hay accept
+    json
+si hay accept
+    zstd
+    br
+    gzip
+    deflate 
+
+pdf->si
+workd->si
+
+img->no
+video->no   
+audio->no
+
+1. tiene que llegar un header con accept-encoding
+2. tiene que tener en cuenta el mime/type de la respuesta
+3. comprimir -> br, gzip, deflate
+
+https://learn.microsoft.com/en-us/aspnet/core/performance/response-compression?view=aspnetcore-8.0

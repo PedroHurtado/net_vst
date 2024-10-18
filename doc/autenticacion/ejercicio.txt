@@ -7,3 +7,24 @@ crear una api-rest
 3. vamos a implementar un metodo get
     que nos devuelva los datos por id
     en el caso de no existir->404
+4. Implementar CORS
+
+5. Desde mi Repository
+    1. Entity Base
+    2. Ingredientes
+    3. Pizzas
+6. Creamos un post para pizzas
+7. Creamos un post para ingredientes
+8. Creamos un get para ingredientes
+
+9. Utilizar EF->mapear y grabar en una sql
+    SqlInmemory
+    1. Instalar el EF core
+    2. Registrar el contexto dentro de los servicios
+    3. Crear un DbContext
+        DbSet<Pizzas>->Repository
+        DbSet<Ingredients>
+        saveChanges()->UOW
+    4. Configuracion de las entidades
+    //https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/
+    //https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli

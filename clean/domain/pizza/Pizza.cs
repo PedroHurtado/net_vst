@@ -32,7 +32,7 @@ namespace clean.domain.pizza{
         public static Pizza Create(string name,string description, string url, IEnumerable<Ingredient> ingredientes){
             var pizza= new Pizza(Guid.NewGuid(),name,description,url);
             foreach(var ingredient in ingredientes){
-                pizza.AddIngredient(ingredient);
+                pizza.ingredients.Add(ingredient);
             }
             return pizza;
         }

@@ -1,0 +1,42 @@
+1. Repository Pattern
+
+    Tracking
+
+    add,update,get,remove
+    add(pizza)->pizza->insert
+    get(1)->    pizza->read
+    update(pizza) -> Recorrer cada atributo de la pizza 
+                     ver los cambios y por tanto hacer un 
+                     update de los atributos que han cambiado
+    remove(pizza) -> deleted
+                    delete por la primary key
+    
+2. Unit of work
+    saveChanges()
+    
+    try{
+        //open conection
+        //begin transaction
+        //insert,update,delete
+        //commit transaction
+    }
+    catch(err){
+        roolback transaction
+    }
+    finally{
+        close connection
+    }
+3. Inpedance Mismatch
+https://en.wikipedia.org/wiki/Object%E2%80%93relational_impedance_mismatch
+https://medium.com/booleanbhushan/object-relational-impedance-mismatch-28fc2440dee4
+
+Pizza
+    IEnumerable<Ingredients>
+
+1. Pizza
+    1
+2. Ingredient
+    1,2
+3. n:m PizzaId, IngredientId
+        1       1
+        1       2
