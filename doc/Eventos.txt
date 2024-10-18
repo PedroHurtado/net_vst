@@ -1,0 +1,24 @@
+void->Commandos->Eventos
+
+1. BB.DD Escrituras->SQL->RELACIONAL
+	add,update,remove, get(privary key)
+2. BB.DD Lecturas->NO RELACIONAL->MONGO
+	Query->getAll()
+
+Coordinar las 2 BB.DD
+
+Create,Update,AddIngredient,RemoveIngredient
+
+n:m
+
+{
+   id:
+   timestamp:
+   id:entidad
+   type:Create,Update,AddIngredient,RemoveIngredient
+   user:
+   data:entidad->serializada
+}
+
+CQRS
+OUTBUX PATTERN
