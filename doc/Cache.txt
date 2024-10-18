@@ -1,0 +1,36 @@
+Caching en ASP.NET Core
+o Tipos de caching (en memoria, distribuido)
+o Implementación de caching con ejemplos prácticos
+
+1. Cache http
+    .html->304->cabeceras
+
+    js,css,etc,etc
+
+    hash compilacion
+    a.js
+    a.587964.js public, max-age=31536000 1 año expresado
+    en segundos
+
+    a.587965.js->200
+
+cache del servidor
+
+    Controlador->UseCase->Ef->BB.DD.
+    Muchos Join->
+
+    /pizzas?name=car&page=1&size=25
+
+    if(cache)
+        return cache
+    else
+        read
+        cache
+        return cache
+
+    cache distribuido->redis
+
+    Micro-A ->2 instancias comparten la misma cache
+
+    max-age
+    s-maxage->proxi
